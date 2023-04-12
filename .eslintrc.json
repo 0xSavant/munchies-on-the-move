@@ -1,3 +1,18 @@
 {
   "extends": "next/core-web-vitals"
-}
+},
+{
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/no-unknown-property": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "no-unused-vars": "off",
+    "no-undef": "off",
+    "no-redeclare": "warn",
+    "react/no-unescaped-entities": "off",
+    "no-mixed-spaces-and-tabs": "off",
+    "no-constant-condition": "off",
+    "@next/next/no-html-link-for-pages": "off",
+  },
