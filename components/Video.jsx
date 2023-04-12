@@ -4,11 +4,11 @@ import styles from "@/styles/Video.module.css";
 const YoutubeEmbed = () => (
   <div className={styles.videoResponsive}>
     <iframe
-      width="853"
-      height="480"
+      width="550"
+      height="305"
       src={`https://www.youtube.com/embed/HGMTbmhrwd0`}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      title="Embedded youtube"
+      title="Munchies on the Move"
     />
   </div>
 );

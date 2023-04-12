@@ -7,9 +7,11 @@
 }
 
 .videoResponsive iframe {
-  left: 0;
-  top: 0;
-  height: 100%;
+  left: auto;
+  top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  height: 75%;
   width: 100%;
   position: absolute;
   z-index: 5;
