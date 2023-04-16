@@ -3,115 +3,22 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Model from "@/components/Cookie";
 import YoutubeEmbed from "@/components/Video";
+import TeamList from "@/components/Team";
+import Header from "@/components/Header";
+import CTA from "@/components/CallToAction";
+import Discover from "@/components/Discover";
 
 const navigation = [
   { name: "Selections", href: "#" },
   { name: "Locations", href: "#" },
+  { name: "Customers", href: "#" },
   { name: "About", href: "#" },
 ];
 
 export default function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
     <div className="bg-white">
-      <header className="absolute inset-x-0 top-0 z-50">
-        <nav
-          className="flex items-center justify-between p-6 lg:px-8"
-          aria-label="Global"
-        >
-          <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Munchies on the Move</span>
-              <img
-                className="h-8 w-auto"
-                src="https://i.imgur.com/Utv6Cx3.png"
-                alt=""
-              />
-            </a>
-          </div>
-          <div className="flex lg:hidden">
-            <button
-              type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-              onClick={() => setMobileMenuOpen(true)}
-            >
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-            </button>
-          </div>
-          <div className="hidden lg:flex lg:gap-x-12">
-            {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-sm font-semibold leading-6 text-gray-900"
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a
-              href="#"
-              className="text-sm font-semibold leading-6 text-gray-900"
-            >
-              Track Us <span aria-hidden="true">&rarr;</span>
-            </a>
-          </div>
-        </nav>
-        <Dialog
-          as="div"
-          className="lg:hidden"
-          open={mobileMenuOpen}
-          onClose={setMobileMenuOpen}
-        >
-          <div className="fixed inset-0 z-50" />
-          <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
-                <span className="sr-only">Your Company</span>
-                <img
-                  className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                  alt=""
-                />
-              </a>
-              <button
-                type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="sr-only">Close menu</span>
-                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-              </button>
-            </div>
-            <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="space-y-2 py-6">
-                  {navigation.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >
-                      {item.name}
-                    </a>
-                  ))}
-                </div>
-                <div className="py-6">
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Sign Up
-                  </a>
-                </div>
-              </div>
-            </div>
-          </Dialog.Panel>
-        </Dialog>
-      </header>
+      <Header />
 
       <div className="relative isolate px-6 pt-14 lg:px-8">
         <div
@@ -136,18 +43,18 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="text-center">
+          <div className="animate-fade-in text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Serving Quality Food Anytime, Anywhere
+              Munchies on the Move
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Get new sweets everytime you find us at a random place, and at a
-              random time on Clemson University's campus.
+              Serving quality food at a random place, and at a random time on
+              Clemson University's campus.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="#"
-                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="animate-bounce rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Sign Up for Updates
               </a>
@@ -160,7 +67,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="mx-auto max-w-2xl lg:text-center mb-10">
+        <div>
+          <Discover />
+        </div>
+        <div className="mx-auto max-w-4xl lg:text-center mt-32 mb-10">
           <h2 className="text-base font-semibold leading-7 text-indigo-600">
             Learn More
           </h2>
@@ -172,9 +82,21 @@ export default function Home() {
             and baked goods, at a random time of day, and random place on
             Clemson University's campus.
           </p>
+          <div className="mt-6">
+            <iframe
+              width="800"
+              height="400"
+              src={`https://www.youtube.com/embed/HGMTbmhrwd0`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              title="Munchies on the Move"
+            />
+          </div>
         </div>
         <div>
-          <YoutubeEmbed />
+          <TeamList />
+        </div>
+        <div>
+          <CTA />
         </div>
         <div
           className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"

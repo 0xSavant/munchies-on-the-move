@@ -1,14 +1,14 @@
-import { Canvas } from "@react-three/fiber";
-import { useLoader } from "@react-three/fiber";
+import { Canvas, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Suspense } from "react";
+import { useGLTF } from "@react-three/drei";
 
 const Model = () => {
-  const gltf = useLoader(GLTFLoader, "./Cookie.glb");
+  const gltf = useLoader(GLTFLoader, "/Models/Cookie.glb");
   return (
     <>
       <Canvas>
-        <Suspense>
+        <Suspense fallback={null}>
           <primitive position={[0, 0, 0]} object={gltf.scene} scale={1} />
         </Suspense>
       </Canvas>
